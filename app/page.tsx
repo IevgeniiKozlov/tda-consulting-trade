@@ -3,7 +3,7 @@ import { Spinner } from '@nextui-org/react'
 export default function Home() {
   return (
     <div>
-      Privet
+      Privet user
       <Spinner />
     </div>
   )
