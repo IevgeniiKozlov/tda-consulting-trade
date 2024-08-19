@@ -1,7 +1,11 @@
 'use client'
 
 const HeroSection = () => {
-  return <div>Herosection</div>
+  return (
+    <section className=''>
+      <div>Herosection</div>
+    </section>
+  )
 }
 
 export default HeroSection
