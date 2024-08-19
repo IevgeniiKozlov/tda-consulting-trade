@@ -1,10 +1,10 @@
-import { Spinner } from '@nextui-org/react'
+import HeroSection from './(components)/HeroSection'
 
-export default function Home() {
+export default function MainPage() {
   return (
     <div>
-      Privet user
-      <Spinner />
+      <HeroSection />
+      <div>Privet user</div>
     </div>
   )
 }
