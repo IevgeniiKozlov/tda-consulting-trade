@@ -1,10 +1,23 @@
+import About from './(components)/About'
+import Contact from './(components)/Contact'
+import Footer from './(components)/Footer'
+import Header from './(components)/Header'
 import HeroSection from './(components)/HeroSection'
+import Location from './(components)/Location'
+import Products from './(components)/Products'
+import Services from './(components)/Services'
 
 export default function MainPage() {
   return (
-    <div>
+    <main className='h-full'>
+      <Header />
       <HeroSection />
-      <div>Privet user</div>
-    </div>
+      <About />
+      <Services />
+      <Products />
+      <Location />
+      <Contact />
+      <Footer />
+    </main>
   )
 }
