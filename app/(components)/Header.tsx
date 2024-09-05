@@ -12,18 +12,17 @@ import {
 } from '@nextui-org/react'
 import NextImage from 'next/image'
 import Link from 'next/link'
+import { navMenu } from '../(lib)/navigations'
 
 import { useState } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
-  const menuItems = ['Products', 'LOI calculating', 'Contact us']
-
   return (
     <Navbar
       classNames={{
-        base: 'bg-noise',
+        base: 'bg-tranparent',
       }}
       maxWidth={'xl'}
       isMenuOpen={isMenuOpen}
@@ -35,14 +34,11 @@ const Header = () => {
             <NextUIImage
               as={NextImage}
               src='/logo.png'
-              width={48}
-              height={35}
+              width={200}
+              height={50}
               alt=''
-              className='bg-primary'
+              className='rounded-none'
             />
-            <p className='font-russo text-lg text-primary'>
-              TDA ConsultingTrade
-            </p>
           </NextUILink>
         </NavbarBrand>
       </NavbarContent>
@@ -53,8 +49,17 @@ const Header = () => {
       >
         <NavbarItem>
           <NextUILink
-            className='font-russo text-xl text-primary decoration-amber-500 hover:text-amber-500'
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
             href='#'
+            underline='hover'
+          >
+            LOI offer
+          </NextUILink>
+        </NavbarItem>
+        <NavbarItem>
+          <NextUILink
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
+            href='#about'
             underline='hover'
           >
             About
@@ -62,8 +67,8 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <NextUILink
-            className='font-russo text-xl text-primary decoration-amber-500 hover:text-amber-500'
-            href='#'
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
+            href='#services'
             underline='hover'
           >
             Services
@@ -71,8 +76,8 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem isActive>
           <NextUILink
-            className='font-russo text-xl text-primary decoration-amber-500 hover:text-amber-500'
-            href='#'
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
+            href='#products'
             underline='hover'
             aria-current='page'
           >
@@ -81,30 +86,14 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <NextUILink
-            className='font-russo text-xl text-primary decoration-amber-500 hover:text-amber-500'
-            href='#'
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
+            href='#contact'
             underline='hover'
           >
             Contact
           </NextUILink>
         </NavbarItem>
-        <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-primary decoration-amber-500 hover:text-amber-500'
-            href='#'
-            underline='hover'
-          >
-            LOI offer
-          </NextUILink>
-        </NavbarItem>
       </NavbarContent>
-
-      {/* <NavbarContent className='hidden md:flex text-primary' justify='end'>
-        <FaPhone
-          size={45}
-          className='flex p-2 text-primary hover:text-amber-400'
-        />
-      </NavbarContent> */}
 
       {/* Mobile menu */}
       <NavbarContent className='md:hidden text-primary' justify='end'>
@@ -114,9 +103,11 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarMenu className='py-4 sm:items-center'>
-        {menuItems.map((item, index) => (
+        {navMenu.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <NextUILink className=''>{item}</NextUILink>
+            <NextUILink as={Link} href={item.href} className=''>
+              {item.value}
+            </NextUILink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

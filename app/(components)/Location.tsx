@@ -2,7 +2,7 @@
 
 const Location = () => {
   return (
-    <section className='pt-[100px] bg-white bg-cover bg-noise'>
+    <section className='pt-[100px]'>
       <div className='container mx-auto flex justify-center h-[200px] bg-worldmap bg-cover'>
         {/* <div className='font-russo text-primary text-xl underline underline-offset-8'>
           Location

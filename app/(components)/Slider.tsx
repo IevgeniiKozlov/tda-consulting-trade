@@ -14,7 +14,7 @@ const EmblaCarousel = () => {
 
   return (
     <div
-      className='embla mx-auto w-full h-[600px] rounded-2xl border'
+      className='embla mx-auto w-full h-[400px] rounded-2xl border'
       ref={emblaRef}
     >
       <div className='embla__container h-full'>

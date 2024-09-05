@@ -9,7 +9,7 @@ import Services from './(components)/Services'
 
 export default function MainPage() {
   return (
-    <main className='h-full'>
+    <main className='h-full bg-white bg-noise bg-cover'>
       <Header />
       <HeroSection />
       <About />

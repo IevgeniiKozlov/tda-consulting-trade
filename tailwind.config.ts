@@ -10,13 +10,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+        },
+      },
+      screens: {
+        xs: '390px',
+        // => @media (min-width: 390px) { ... }
+      },
       fontFamily: {
         sans: ['var(--font-sans)'],
         russo: ['var(--font-russo)'],
       },
       colors: {
         black: '#0a0908',
-        'black-bg': '#293037',
+        'light-black': '#293037',
+        'light-gray': '#948982',
         primary: '#C1844D',
         gray: '#B4B4B4',
       },
@@ -24,7 +35,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        main: "url('../public/main-bg.png')",
+        main: "url('../public/main.png')",
         noise: "url('../public/noise.png')",
         worldmap: "url('../public/worldmap.png')",
         contact: "url('../public/contact.png')",
