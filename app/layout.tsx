@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Russo_One, Space_Grotesk } from 'next/font/google'
+import Footer from './(components)/Footer'
+import Header from './(components)/Header'
 import './globals.css'
 import { Providers } from './providers'
 
@@ -28,7 +30,13 @@ export default function RootLayout({
   return (
     <html lang='en' className='scroll-smooth'>
       <body className={`${grotesk.variable} ${russo.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <main className='h-full bg-white bg-noise bg-cover'>
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </Providers>
       </body>
     </html>
   )

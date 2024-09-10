@@ -92,6 +92,15 @@ const Header = () => {
             Contact
           </NextUILink>
         </NavbarItem>
+        <NavbarItem>
+          <NextUILink
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
+            href='/loi'
+            underline='hover'
+          >
+            LOI
+          </NextUILink>
+        </NavbarItem>
       </NavbarContent>
 
       {/* Mobile menu */}
