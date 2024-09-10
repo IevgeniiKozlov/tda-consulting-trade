@@ -1,6 +1,8 @@
 'use client'
 
+import { Image as NextUIImage } from '@nextui-org/react'
 import useEmblaCarousel from 'embla-carousel-react'
+import NextImage from 'next/image'
 import { useEffect } from 'react'
 
 const EmblaCarousel = () => {
@@ -19,13 +21,34 @@ const EmblaCarousel = () => {
     >
       <div className='embla__container h-full'>
         <div className='embla__slide flex items-center justify-center'>
-          Slide 1
+          <NextUIImage
+            as={NextImage}
+            alt='Quality Products and Services'
+            className='object-cover'
+            width={1000}
+            height={400}
+            src='/background.png'
+          />
         </div>
         <div className='embla__slide flex items-center justify-center'>
-          Slide 2
+          <NextUIImage
+            as={NextImage}
+            alt='Quality Products and Services'
+            className='object-cover'
+            width={1000}
+            height={400}
+            src='/background.png'
+          />
         </div>
         <div className='embla__slide flex items-center justify-center'>
-          Slide 3
+          <NextUIImage
+            as={NextImage}
+            alt='Quality Products and Services'
+            className='object-cover'
+            width={1000}
+            height={400}
+            src='/background.png'
+          />
         </div>
       </div>
     </div>

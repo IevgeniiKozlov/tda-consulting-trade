@@ -3,20 +3,24 @@ import Contact from './(components)/Contact'
 import Footer from './(components)/Footer'
 import Header from './(components)/Header'
 import HeroSection from './(components)/HeroSection'
-import Location from './(components)/Location'
+// import Location from './(components)/Location'
 import Products from './(components)/Products'
 import Services from './(components)/Services'
 
 export default function MainPage() {
   return (
-    <main className='h-full bg-white bg-noise bg-cover'>
+    <main className='h-full'>
       <Header />
+
       <HeroSection />
-      <About />
-      <Services />
-      <Products />
-      <Location />
-      <Contact />
+      <div className='bg-white bg-noise bg-cover'>
+        <About />
+        {/* <Location /> */}
+        <Services />
+        <Products />
+
+        <Contact />
+      </div>
       <Footer />
     </main>
   )

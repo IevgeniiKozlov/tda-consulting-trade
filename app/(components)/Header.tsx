@@ -7,10 +7,8 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Image as NextUIImage,
   Link as NextUILink,
 } from '@nextui-org/react'
-import NextImage from 'next/image'
 import Link from 'next/link'
 import { navMenu } from '../(lib)/navigations'
 
@@ -22,15 +20,15 @@ const Header = () => {
   return (
     <Navbar
       classNames={{
-        base: 'bg-tranparent',
+        base: 'bg-transparent',
       }}
-      maxWidth={'xl'}
+      maxWidth={'2xl'}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className='w-full flex justify-between items-center'>
         <NavbarBrand className='gap-1'>
-          <NextUILink as={Link} href='/' className='gap-4 flex items-center'>
+          {/* <NextUILink as={Link} href='/' className='gap-4 flex items-center'>
             <NextUIImage
               as={NextImage}
               src='/logo.png'
@@ -39,7 +37,8 @@ const Header = () => {
               alt=''
               className='rounded-none'
             />
-          </NextUILink>
+          </NextUILink> */}
+          TDA Consulting trade
         </NavbarBrand>
       </NavbarContent>
 
@@ -53,7 +52,7 @@ const Header = () => {
             href='#'
             underline='hover'
           >
-            LOI offer
+            LOI
           </NextUILink>
         </NavbarItem>
         <NavbarItem>

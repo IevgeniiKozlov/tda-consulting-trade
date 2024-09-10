@@ -1,12 +1,12 @@
 'use client'
 
-import Slider from './Slider'
+// import Slider from './Slider'
 
 const About = () => {
   return (
-    <section id='about' className='py-[100px]'>
+    <section id='about' className='pt-[50px] xl:pt-[100px]'>
       <div className='container h-full flex justify-start flex-col mx-auto gap-12'>
-        <div className='text-primary text-xl underline underline-offset-8 uppercase'>
+        <div className='text-primary text-lg underline underline-offset-8 uppercase'>
           ABOUT OUR COMPANY
         </div>
         <div className='flex flex-col lg:flex-row gap-10'>
@@ -19,12 +19,6 @@ const About = () => {
             <p className='text-sm md:text-xl text-gray'>
               TDA Consulting Trade is a leading Ukrainian trading company
               specializing in the supply of oil and petroleum products,
-              {/* including gasoline and diesel fuel. With a commitment to
-              delivering high-quality products that meet all international
-              standards, we strive to ensure the strict fulfillment of all
-              customer requirements and preferences. Our team consists of
-              experienced professionals dedicated to providing exceptional
-              service and fostering long-term partnerships with our clients. */}
             </p>
             <p className='text-sm md:text-xl text-gray'>
               At TDA Consulting Trade, we believe in building trust through
@@ -33,13 +27,16 @@ const About = () => {
               drive success and satisfaction for our customers across the globe.
             </p>
             <p className='text-sm md:text-xl text-gray'>
-              OUR MISSION is to provide first-class quality and services to all
-              our valuable customers and to always be innovative and alert in
-              the marketplace we serve.
+              <span className='text-sm md:text-xl text-light-black'>
+                OUR MISSION{' '}
+              </span>
+              is to provide first-class quality and services to all our valuable
+              customers and to always be innovative and alert in the marketplace
+              we serve.
             </p>
           </div>
         </div>
-        <Slider />
+        {/* <Slider /> */}
       </div>
     </section>
   )
