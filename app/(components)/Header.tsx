@@ -50,15 +50,6 @@ const Header = () => {
         <NavbarItem>
           <NextUILink
             className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='#'
-            underline='hover'
-          >
-            LOI offer
-          </NextUILink>
-        </NavbarItem>
-        <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
             href='#about'
             underline='hover'
           >
@@ -91,6 +82,15 @@ const Header = () => {
             underline='hover'
           >
             Contact
+          </NextUILink>
+        </NavbarItem>
+        <NavbarItem>
+          <NextUILink
+            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
+            href='/loi'
+            underline='hover'
+          >
+            LOI
           </NextUILink>
         </NavbarItem>
       </NavbarContent>

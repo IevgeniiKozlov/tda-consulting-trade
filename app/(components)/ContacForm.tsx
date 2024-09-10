@@ -6,6 +6,7 @@ import { Field, Form, Formik } from 'formik'
 import { object, string } from 'yup'
 
 const ContactForm = () => {
+  const handleSubmit = () => {}
   return (
     <div className='flex flex-col w-1/2 gap-12 z-20'>
       <Formik
@@ -30,7 +31,7 @@ const ContactForm = () => {
             .max(32, 'Пароль має ммістити не більше ніж 32 символи')
             .required('Введіть пароль'),
         })}
-        //   onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
       >
         {(props: FormikProps<any>) => (
           <Form
