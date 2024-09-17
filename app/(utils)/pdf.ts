@@ -1,8 +1,8 @@
-import { NextResponse } from 'next/server'
-import { PDFDocument, StandardFonts } from 'pdf-lib' // Используйте библиотеку для работы с PDF
+import { saveAs } from 'file-saver'
+import { PDFDocument, StandardFonts } from 'pdf-lib'
+import { ILOI } from '../(components)/LetterOfIntentForm'
 
-export async function POST(request: Request) {
-  const data = await request.json()
+export const generatePdf = async (values: ILOI) => {
   const {
     companyName,
     companyAddress,
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     logistics,
     qualityStandards,
     legalFinancialAspects,
-  } = data
+  } = values
 
   const pdfDoc = await PDFDocument.create()
   const page = pdfDoc.addPage()
@@ -196,11 +196,6 @@ export async function POST(request: Request) {
   drawTextRecursive('Sincerely,')
 
   const pdfBytes = await pdfDoc.save()
-
-  return new NextResponse(pdfBytes, {
-    headers: {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment; filename="document.pdf"',
-    },
-  })
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+  saveAs(blob, 'Letter_of_Intent.pdf')
 }
