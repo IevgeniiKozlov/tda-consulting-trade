@@ -6,6 +6,7 @@
     "dev": "cross-env next dev -p $(grep APP_PORT .env | cut -d '=' -f2)",
     "start": "next start -p $(grep APP_PORT .env | cut -d '=' -f2)",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "lint": "next lint",
     "prettier": "prettier --write .",
     "prepare": "husky install"
@@ -18,6 +19,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.3.27",
     "next": "14.2.5",
+    "next-sitemap": "^4.2.3",
     "nodemailer": "^6.9.15",
     "pdf-lib": "^1.17.1",
     "react": "^18",

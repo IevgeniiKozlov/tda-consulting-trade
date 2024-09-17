@@ -1,124 +1,67 @@
 'use client'
 import {
+  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
+  Image as NextUIImage,
   Link as NextUILink,
 } from '@nextui-org/react'
+import { motion } from 'framer-motion'
+import NextImage from 'next/image'
 import Link from 'next/link'
-import { navMenu } from '../(lib)/navigations'
-
-import { useState } from 'react'
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-
   return (
     <Navbar
       classNames={{
-        base: 'bg-transparent',
+        base: 'bg-background h-[80px]',
       }}
+      // position='static'
       maxWidth={'2xl'}
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className='w-full flex justify-between items-center'>
         <NavbarBrand className='gap-1'>
-          {/* <NextUILink as={Link} href='/' className='gap-4 flex items-center'>
+          <NextUILink as={Link} href='/' className='gap-4 flex items-center'>
             <NextUIImage
               as={NextImage}
               src='/logo.png'
-              width={200}
-              height={50}
-              alt=''
-              className='rounded-none'
+              width={100}
+              height={100}
+              alt='Tda Consulting trade - oil trade company'
+              className='w-auto h-auto object-contain'
             />
-          </NextUILink> */}
-          TDA Consulting trade
+          </NextUILink>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent
-        className='hidden md:flex gap-20 justify-center'
-        // justify='center'
-      >
+      <NavbarContent className='flex gap-20 justify-center' justify='end'>
         <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='#'
-            underline='hover'
-          >
-            LOI
-          </NextUILink>
-        </NavbarItem>
-        <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='#about'
-            underline='hover'
-          >
-            About
-          </NextUILink>
-        </NavbarItem>
-        <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='#services'
-            underline='hover'
-          >
-            Services
-          </NextUILink>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='#products'
-            underline='hover'
-            aria-current='page'
-          >
-            Products
-          </NextUILink>
-        </NavbarItem>
-        <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='#contact'
-            underline='hover'
-          >
-            Contact
-          </NextUILink>
-        </NavbarItem>
-        <NavbarItem>
-          <NextUILink
-            className='font-russo text-xl text-light-gray decoration-primary hover:text-primary'
-            href='/loi'
-            underline='hover'
-          >
-            LOI
-          </NextUILink>
-        </NavbarItem>
-      </NavbarContent>
-
-      {/* Mobile menu */}
-      <NavbarContent className='md:hidden text-primary' justify='end'>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        />
-      </NavbarContent>
-
-      <NavbarMenu className='py-4 sm:items-center'>
-        {navMenu.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <NextUILink as={Link} href={item.href} className=''>
-              {item.value}
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <NextUILink
+              target='_blank'
+              className='hidden sm:flex font-russo sm:text-base md:text-xl align-bottom text-white decoration-orange-100 hover:text-action'
+              href={`tel:+38 (067) 634-04-22`}
+              underline='hover'
+            >
+              +38 (067) 634-04-22
             </NextUILink>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+          </motion.div>
+        </NavbarItem>
+        <NavbarItem>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Button
+              as={Link}
+              href='/loi'
+              variant='ghost'
+              className='h-fit rounded-xl px-6 py-2 font-russo bg-primary border-white text-white hover:text-action hover:border-action hover:bg-light-gray'
+            >
+              Make LOI
+            </Button>
+          </motion.button>
+        </NavbarItem>
+      </NavbarContent>
     </Navbar>
   )
 }

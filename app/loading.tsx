@@ -2,98 +2,52 @@
 
 const Loading = () => {
   return (
-    <section className='h-screen'>
-      <div className='w-full h-full flex items-center justify-center pb-5'>
-        <div className='flex gap-3'>
-          <div
-            aria-label='Loading...'
-            role='status'
-            className='flex items-center space-x-2'
-          >
-            <svg
-              className='h-20 w-20 animate-spin stroke-gray-500'
-              viewBox='0 0 256 256'
+    <div className='align-center flex h-screen w-full justify-center'>
+      <div className='flex flex-col items-center justify-center'>
+        <svg
+          className='animate-spin border-actions'
+          xmlns='http://www.w3.org/2000/svg'
+          width='76'
+          height='75'
+          viewBox='0 0 76 75'
+          fill='none'
+        >
+          <g id='Group 1000003700'>
+            <circle
+              id='Ellipse 715'
+              cx='38.0004'
+              cy='37.1953'
+              r='28'
+              stroke='#E5E7EB'
+              strokeWidth='8'
+            />
+            <path
+              id='Ellipse 716'
+              d='M49.8079 62.5848C53.142 61.0342 56.138 58.842 58.6248 56.1335C61.1117 53.425 63.0407 50.2532 64.3018 46.7992C65.5629 43.3452 66.1313 39.6767 65.9745 36.003C65.8178 32.3293 64.939 28.7225 63.3884 25.3884C61.8378 22.0544 59.6456 19.0584 56.9371 16.5715C54.2286 14.0847 51.0568 12.1556 47.6028 10.8946C44.1488 9.63351 40.4802 9.06511 36.8066 9.22183C33.1329 9.37855 29.5261 10.2573 26.192 11.808'
+              stroke='url(#paint0_linear_13416_7443)'
+              strokeWidth='8'
+              strokeLinecap='round'
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id='paint0_linear_13416_7443'
+              x1='0.803595'
+              y1='23.6159'
+              x2='24.4195'
+              y2='74.3928'
+              gradientUnits='userSpaceOnUse'
             >
-              <line
-                x1='128'
-                y1='32'
-                x2='128'
-                y2='64'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='195.9'
-                y1='60.1'
-                x2='173.3'
-                y2='82.7'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='224'
-                y1='128'
-                x2='192'
-                y2='128'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='195.9'
-                y1='195.9'
-                x2='173.3'
-                y2='173.3'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='128'
-                y1='224'
-                x2='128'
-                y2='192'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='60.1'
-                y1='195.9'
-                x2='82.7'
-                y2='173.3'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='32'
-                y1='128'
-                x2='64'
-                y2='128'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-              <line
-                x1='60.1'
-                y1='60.1'
-                x2='82.7'
-                y2='82.7'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='24'
-              ></line>
-            </svg>
-            <span className='text-4xl font-medium text-gray-500'>
-              Loading...
-            </span>
-          </div>
-        </div>
+              <stop stopColor='#A76A3D' />
+              <stop offset='1' stopColor='#D78E58' />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span className='font-russo text-xl md:text-4xl bg-gradient-to-r from-light-black to-action bg-clip-text text-transparent'>
+          Loading...
+        </span>
       </div>
-    </section>
+    </div>
   )
 }
 

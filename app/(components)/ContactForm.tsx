@@ -3,6 +3,7 @@
 import { Button, Input, Textarea } from '@nextui-org/react'
 import type { FormikHelpers, FormikProps } from 'formik'
 import { Field, Form, Formik } from 'formik'
+import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { object, string } from 'yup'
 
@@ -137,34 +138,30 @@ const ContactForm = () => {
             <Field name='message'>
               {({ field }: any) => (
                 <Textarea
-                  variant='bordered'
+                  variant='faded'
                   labelPlacement='outside'
                   placeholder='Enter your message'
                   className={{
-                    // input: [
-                    //   'col-span-12 md:col-span-6 mb-6 md:mb-0',
-                    //   'data-[focus=true]:border-primary',
-                    //   'data-[hover=true]:border-primary',
-                    // ],
                     inputWrapper: [
-                      'data-[focus=true]:border-primary',
-                      'data-[hover=true]:border-primary',
+                      'data-[hover=true]:!border-primary',
+                      'data-[focus=true]:!border-primary',
                     ],
                   }}
                   {...field}
                 />
               )}
             </Field>
-
-            <Button
-              type='submit'
-              disabled={!props.isValid}
-              isLoading={props.isSubmitting}
-              variant='bordered'
-              className='w-full lg:w-[200px] rounded-xl border-white bg-transparent py-6 text-center text-base text-white hover:border-primary hover:bg-primary hover:text-white z-20'
-            >
-              Send your message
-            </Button>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Button
+                type='submit'
+                disabled={!props.isValid}
+                isLoading={props.isSubmitting}
+                variant='bordered'
+                className='w-full lg:w-[200px] h-fit rounded-xl px-6 py-2 font-russo bg-primary border-white text-white hover:text-action hover:border-action hover:bg-light-gray z-20'
+              >
+                Send message
+              </Button>
+            </motion.div>
           </Form>
         )}
       </Formik>
