@@ -27,15 +27,19 @@ const config: Config = {
       colors: {
         black: '#0a0908',
         'light-black': '#293037',
-        'light-gray': '#948982',
         primary: '#C1844D',
-        gray: '#B4B4B4',
+        action: '#E67E22',
+        'light-gray': '#B4B4B4',
+        gray: '#7F8C8D',
+        'light-blue': '#3498DB',
+        green: '#2ECC71',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        main: "url('../public/main.png')",
+        background:
+          'linear-gradient(90deg, rgba(163,197,198,1) 0%, rgba(52,152,219,1) 49%, rgba(44,62,80,1) 100%)',
+        background1: 'linear-gradient(135deg, #3498DB 0%, #2C3E50 100%)', // light blue - dark blue gradient
+        info: "url('../public/infoblock.png')",
+        main: "url('../public/test1.png')",
         noise: "url('../public/noise.png')",
         worldmap: "url('../public/worldmap.png')",
         contact: "url('../public/contact.png')",

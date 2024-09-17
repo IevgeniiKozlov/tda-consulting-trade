@@ -105,7 +105,7 @@ const LetterOfIntentForm = () => {
         return (
           <Form
             onSubmit={handleSubmit}
-            className='flex flex-wrap w-full max-w-7xl gap-x-5 gap-y-2'
+            className='flex flex-wrap w-full gap-x-5 gap-y-2'
           >
             <Field name='companyName'>
               {({ meta, field }: any) => (
@@ -297,10 +297,10 @@ const LetterOfIntentForm = () => {
                 type='submit'
                 disabled={!isValid}
                 isLoading={isSubmitting}
-                variant='bordered'
-                className='w-fit'
+                variant='ghost'
+                className='h-fit w-fit rounded-xl px-6 py-2 font-russo bg-primary border-light-gray text-white hover:text-action hover:border-action hover:bg-light-gray'
               >
-                Donwload
+                Donwload LOI
               </Button>
             </div>
           </Form>
