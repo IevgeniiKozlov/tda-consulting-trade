@@ -11,6 +11,20 @@ import type { FormikHelpers, FormikProps } from 'formik'
 import { Field, Form, Formik } from 'formik'
 import { useState } from 'react'
 import { object, string } from 'yup'
+import { generatePdf } from '../(utils)/pdf'
+
+export interface ILOI {
+  companyName: string
+  companyAddress: string
+  companyContact: string
+  typesProducts: string[]
+  supplyVolume: string
+  deliverySchedule: string
+  paymentTerms: string
+  logistics: string
+  qualityStandards: string
+  legalFinancialAspects: string
+}
 
 const LetterOfIntentForm = () => {
   const [isInvalid, setIsInvalid] = useState(false)
@@ -25,18 +39,12 @@ const LetterOfIntentForm = () => {
     { setSubmitting, resetForm }: FormikHelpers<any>,
   ) => {
     setSubmitting(true)
-    const res = await fetch('/api/pdf', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ typesProducts: selectedProducts, ...values }),
-    })
-    const blob = await res.blob()
-    const link = document.createElement('a')
-    link.href = window.URL.createObjectURL(blob)
-    link.download = 'Letter_of_Intent_en.pdf'
-    link.click()
+    console.log(values)
+    try {
+      await generatePdf({ ...values, typesProducts: selectedProducts })
+    } catch (e) {
+      console.log(e)
+    }
     resetForm()
     setSubmitting(false)
   }
